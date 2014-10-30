@@ -35,29 +35,29 @@
                 function ( $stateProvider ) {
                     $stateProvider
 
-                    // DEFAULT
+                        // DEFAULT
                         .state( "default", {
-                        url: "",
-                        templateUrl: "login/view/LoginView",
-                        controller: "loginController",
-                        pageTitle: "login.title"
-                    } )
+                            url: "",
+                            templateUrl: "login/view/LoginView",
+                            controller: "loginController",
+                            pageTitle: "login.title"
+                        } )
 
-                    // LOGIN
-                    .state( "login", {
-                        url: "/login",
-                        templateUrl: "login/view/LoginView",
-                        controller: "loginController",
-                        pageTitle: "login.title"
-                    } )
+                        // LOGIN
+                        .state( "login", {
+                            url: "/login",
+                            templateUrl: "login/view/LoginView",
+                            controller: "loginController",
+                            pageTitle: "login.title"
+                        } )
 
-                    // HOME
-                    .state( "home", {
-                        url: "/home",
-                        templateUrl: "home/view/HomeView",
-                        controller: "homeController",
-                        pageTitle: "home.title"
-                    } );
+                        // HOME
+                        .state( "home", {
+                            url: "/home",
+                            templateUrl: "home/view/HomeView",
+                            controller: "homeController",
+                            pageTitle: "home.title"
+                        } );
 
                 }
             ] );

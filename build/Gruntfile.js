@@ -22,10 +22,8 @@
  *      and run `grunt protractor`.
  *      2) If not running `grunt dev`, then  run `grunt e2e` which will build and fire up the web server and then run the e2e tests.
  *
- * TODO: BMR: There are overlaps in the concatenated login.js and app.js with common RJS modules. We should consider making a common.js with those.
- *
  * @author Brian Riley
- * @date July 29, 2013
+ * @date October 30, 2014
  *
  */
 
@@ -90,7 +88,7 @@ module.exports = function ( grunt ) {
             options: {
                 force: true
             },
-            libs: [ "libs" ],
+            //libs: [ "libs" ], // TODO ???
             dev: [ "<%= buildDir %>/*" ],
             prod: [ "<%= compileDir %>/*" ],
             postProd: [ "<%= compileDir %>/infrastructure" ],
@@ -259,7 +257,7 @@ module.exports = function ( grunt ) {
                     fileTypes: [ ".less" ]
                 },
                 html: {
-                    fileTypes: [ ".jst" ]
+                    fileTypes: [ ".jst", ".html" ]
                 }
             },
             files: [
@@ -414,7 +412,7 @@ module.exports = function ( grunt ) {
         requirejs: {
             dev: {
                 options: {
-                    mainConfigFile: "config/require.dev.conf.js",
+                    //mainConfigFile: "config/require.dev.conf.js",
                     appDir: "<%= srcDir %>",
                     baseUrl: ".",
                     dir: "<%= buildDir %>",
@@ -484,23 +482,25 @@ module.exports = function ( grunt ) {
 
             dev: {
                 files: [ {
-                    expand: true,
-                    dot: true,
-                    cwd: ".",
-                    dest: "<%= buildDir %>",
-                    src: [
-                        "index.html"
-                    ]
-                }, {
-                    expand: true,
-                    cwd: ".",
-                    dest: "<%= buildDir %>/libs/",
-                    filter: "isFile",
-                    flatten: true,
-                    src: [
-                        "<%= hubDir %>/*.js"
-                    ]
-                } ]
+                        expand: true,
+                        dot: true,
+                        cwd: ".",
+                        dest: "<%= buildDir %>",
+                        src: [
+                            "index.html"
+                        ]
+                    }
+                    //}, {
+                    //    expand: true,
+                    //    cwd: ".",
+                    //    dest: "<%= buildDir %>/libs/",
+                    //    filter: "isFile",
+                    //    flatten: true,
+                    //    src: [
+                    //        "<%= hubDir %>/*.js"
+                    //    ]
+                    //}
+                ]
             },
 
             spinJSHack: {
@@ -574,11 +574,11 @@ module.exports = function ( grunt ) {
         // Less
         less: {
             options: {
-                paths: [ "<%= srcDir %>/styles" ]
+                paths: [ "<%= srcDir %>/assets/less" ]
             },
             dev: {
                 files: {
-                    "<%= buildDir %>/styles/ppt.min.css": "<%= srcDir %>/styles/putnam.theme.less"
+                    "<%= buildDir %>/styles/ppt.min.css": "<%= srcDir %>/assets/less/theme.less"
                 }
             },
             prod: {
@@ -593,7 +593,7 @@ module.exports = function ( grunt ) {
         html2js: {
             options: {
                 module: "<%= htmlTemplateName %>",
-                src: [ "<%= srcDir %>/**/**/*.jst", "<%= srcDir %>/**/**/*.html" ],
+                src: [ "!<%= srcDir %>/index.html", "<%= srcDir %>/**/**/*.jst", "<%= srcDir %>/**/**/*.html" ],
                 rename: function ( moduleName ) {
                     var name = moduleName.match( /app\/(.+)\.(jst|html)$/i )[ 1 ];
                     return name;
@@ -636,7 +636,7 @@ module.exports = function ( grunt ) {
             options: {
                 port: "<%= ports.webServer.build %>",
                 base: "<%= buildDir %>",
-                protocol: "https",
+                //protocol: "https", // TODO: Uncomment to make this work over HTTPS
                 middleware: function ( connect, options ) {
                     if ( !Array.isArray( options.base ) ) {
                         options.base = [ options.base ];
@@ -744,7 +744,7 @@ module.exports = function ( grunt ) {
              */
             html: {
                 files: [
-                    "*.html"
+                    "<%= srcDir %>/*.html"
                 ],
                 tasks: [ "copy:dev" ]
             },
@@ -762,7 +762,8 @@ module.exports = function ( grunt ) {
                 //                tasks: [ "jsbeautifier", "jshint", "copy:dev", "requirejs:dev", "karma:unit" ]
 
                 // TODO: BMR: Consider adding an arg to run with/out jsbeautifier
-                tasks: [ "jshint", "copy:dev", "requirejs:dev", "karma:unit" ]
+                //tasks: [ "jshint", "copy:dev", "requirejs:dev", "karma:unit" ] // TODO
+                tasks: [ "jshint", "copy:dev", "requirejs:dev" ]
             },
 
             /**
@@ -779,12 +780,13 @@ module.exports = function ( grunt ) {
                     "<%= testDir %>/unit/**/*Spec.js"
                 ],
                 //                tasks: [ "jsbeautifier", "jshint", "karma:unit" ]
-                tasks: [ "jshint", "karma:unit" ]
+                //tasks: [ "jshint", "karma:unit" ] // TODO
+                tasks: [ "jshint" ]
             },
 
             styles: {
                 files: [
-                    "<%= srcDir %>/styles/{,**/}*.less"
+                    "<%= srcDir %>/assets/less/*.less"
                 ],
                 tasks: [ "less:dev" ],
                 options: {
@@ -811,7 +813,7 @@ module.exports = function ( grunt ) {
              */
             locale: {
                 files: [
-                    "<%= srcDir %>/locale/**/*.json"
+                    "<%= srcDir %>/assets/locale/**/*.json"
                 ],
                 tasks: [ "buildLocales:dev", "concat:devLocales" ]
             }
@@ -1018,8 +1020,8 @@ module.exports = function ( grunt ) {
      */
     grunt.registerTask( "build", "Gets your app ready to run for development and testing without running a web server.", [
         "clean:dev",
-        "buildLocales:dev",
-        //"jsbeautifier",
+        "buildLocales:dev", // TODO
+        "jsbeautifier",
         "jshint",
         "bower:dev",
         "copy:dev",
@@ -1036,8 +1038,8 @@ module.exports = function ( grunt ) {
      */
     grunt.registerTask( "dev", "Developer task that extends the build task and then runs unit tests and configures a local web server.", [
         "build",
-        "karma:unit",
-        "configureProxies",
+        //"karma:unit", // TODO
+        "configureProxies", // TODO
         "connect:dev",
         "watch",
         "notify_hooks"
@@ -1086,7 +1088,7 @@ module.exports = function ( grunt ) {
         }
     } );
 
-    /**
+    /**dev
      * Performs E2E testing in a single run. If the grunt task "grunt dev" is already running, just fire of another command to run
      * "grunt protractor". This task is used if not running the web server already.
      */

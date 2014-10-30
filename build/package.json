@@ -1,8 +1,8 @@
 {
   "author": "Putnam Inc.",
-  "name": "PPT",
+  "name": "angularjs-requirejs-async",
   "version": "0.1.0",
-  "description": "Participant Retirement Management Application",
+  "description": "POC t provide asynchronous loading of AngularJS components using RequireJS.",
   "homepage": "http://www.putnam.com/",
   "repository": {
     "type": "SVN",

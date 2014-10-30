@@ -6,12 +6,12 @@ module.exports = {
     /**
      * The `srcDir` folder is where our source code directory is located.
      */
-    srcDir: "app",
+    srcDir: "../client/src/app",
 
     /**
      * The `testDir` folder is where the unit and e2e tests are located.
      */
-    testDir: "test",
+    testDir: "../client/test",
 
     /**
      * The `libDir` folder is where the 3rd party JS libraries are located.
@@ -19,21 +19,14 @@ module.exports = {
     libDir: "libs",
 
     /**
-     * The `hubDir` folder is where the hub library is located.
-     */
-    hubDir: "hub",
-
-    /**
      * The `buildDir` folder is where our projects are compiled during development.
-     * TODO: BMR: Consider using bin/dev
      */
-    buildDir: "server/dev",
+    buildDir: "../bin/dev",
 
     /**
      * The `compileDir` folder is where our app resides once it's completely built and is ready for production.
-     * TODO: BMR: Consider using bin/prod
      */
-    compileDir: "server/prod",
+    compileDir: "../bin/prod",
 
     /**
      * List of 3rd party libraries required for the application.
@@ -92,8 +85,8 @@ module.exports = {
      * Lists the individual locale directories that contains JSON localization resource bundles.
      */
     locale: [
-        "app/locale/en_US/",
-        "app/locale/es_ES/"
+        "../client/src/assets/locale/en_US",
+        "../client/src/assets/locale/es_ES/"
     ],
 
     /**

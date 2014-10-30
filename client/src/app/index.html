@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Putnam Investments</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0, minimal-ui">
+    <link rel="stylesheet" href="styles/ppt.min.css"/>
+    <!-- Webstats include, needs to be at the top of the page -->
+    <script src="//nexus.ensighten.com/putnam/dc-uat/Bootstrap.js"></script>
+</head>
+<body>
+<div class="pageContainer"
+     ng-class="{inactive: model.menuState == 'inactive', activeLeft: model.menuState == 'activeLeft', activeRight: model.menuState == 'activeRight'}"
+     ng-controller="mainController">
+
+    <!-- Profile Menu -->
+    <div class="flyout flyoutBackerLeft"></div>
+    <div id="flyoutLeft" class="flyout">
+        <div class="profile-menu"></div>
+    </div>
+    <!-- Navigation Menu -->
+    <div id="flyoutRight" class="flyout">
+        <ul class="nav nav-pills nav-stacked">
+            <!--todo: this could probably have a function for a show, but it needs to be dynamic-->
+            <li ng-repeat="link in model.navLinks" ng-show="showRetirementIncome || (link.name !== 'retirementIncome' && link.name !== 'default')">
+                <a ui-sref="{{link.name}}" ng-click="flyoutShadeClicked(link.name)">
+                <div class="navElement">
+                    <span class="navLinkName">{{ link.pageTitle | translate }}</span><span class="navArrow"> > </span>
+                </div></a>
+            </li>
+            <li ng-click="logout()">
+                <a>
+                    <div class="navElement">
+                        <span class="navLinkName">{{ 'app.titles.logout' | translate }}</span><span class="navArrow"> > </span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- Page Content -->
+    <div id="main">
+
+        <div ui-view class="fullHeightMain ppt-transitions-page-slide"></div>
+
+        <!-- TODO: BMR: Consider creating a debug module and this footer is only shown if ?debug=true is in the query string
+        <div>
+            <button ng-click="changeLocale('en_US')">English</button>
+            <button ng-click="changeLocale('es_ES')">Spanish</button>
+            <span> | </span>
+            <button ng-click="openModal('TEST1', ['okay', 'cancel'])">Okay/Cancel Modal Test</button>
+            <button ng-click="openModal('TEST2',['okay'])">Okay Modal Test</button>
+            <button ng-click="openModal('TEST',['cancel'])">Cancel Modal Test</button>
+            <button ng-click="openModal('TEST', ['yes', 'no', 'cancel'])">Yes/No/Cancel Modal Test</button>
+            <button ng-click="openModal('TEST', ['yes', 'no', 'cancel', 'okay'])">Yes/No/Cancel/Ok Modal Test</button>
+            <button ng-click="openModal('TEST2')">Default Msg Btns Modal Test</button>
+        </div>-->
+
+    </div>
+
+    <div id="headerContainer">
+        <div class="ppt-header"></div>
+    </div>
+
+    <div class="flyoutShade" ng-click="flyoutShadeClicked()"></div>
+
+    <!-- Loading spinner -->
+    <div id="loadingContainer" ng-cloak ng-show="model.waiting">
+        <div class="loadingShade"></div>
+        <div class="loadingSpinner">
+            <span us-spinner="{{model.spinnerConfig}}" spinner-key="spinner-1" spinner-start-active="1"></span>
+        </div>
+    </div>
+
+</div>
+
+<!-- build:js:prod libs/libs.js -->
+<script src="libs/lodash.js"></script>
+<script src="libs/jquery.js"></script>
+<script src="libs/angular.js"></script>
+<script src="libs/spin.js"></script>
+<script src="libs/odometer.js"></script>
+<script src="libs/angular-animate.js"></script>
+<script src="libs/angular-sanitize.js"></script>
+<script src="libs/angular-modal-service.js"></script>
+<script src="libs/angular-cookies.js"></script>
+<script src="libs/angular-touch.js"></script>
+<script src="libs/angular-odometer-js.js"></script>
+<script src="libs/angular-translate.js"></script>
+<script src="libs/angular-ui-router.js"></script>
+<script src="libs/angular-spinner.js"></script>
+<script src="libs/js/bootstrap.js"></script>
+<script src="libs/requirejs.js"></script>
+<script src="libs/hub.js"></script>
+<!-- /build -->
+
+<!-- build:js:prod app.js -->
+<script src="bootstrap.js"></script>
+<!-- /build -->
+
+</body>
+</html>

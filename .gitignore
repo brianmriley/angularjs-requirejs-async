@@ -1,0 +1,6 @@
+*~
+bin/
+.DS_Store
+client/vendor/
+build/docs
+build/node_modules

@@ -33,7 +33,7 @@
          * Instantiate the module with it's child module dependencies and IoC objects.
          */
         angular.module( moduleName, moduleDependencies )
-            .config( HomeConfig )
+            //.config( HomeConfig )
             .controller( "homeController", HomeController );
 
         // Publish the module namespace; used as dependency name within other

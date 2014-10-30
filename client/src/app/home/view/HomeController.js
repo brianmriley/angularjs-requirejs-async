@@ -1,4 +1,3 @@
-
 /**
  * @docType function
  * @ngDoc app
@@ -12,67 +11,65 @@
  *
  */
 ( function () {
-	"use strict";
+    "use strict";
 
-	var dependencies = [
-	];
+    var dependencies = [];
 
-	/**
-	 * Register the module class with RequireJS.
-	 */
-	define( "home/view/HomeController", dependencies, function () {
+    /**
+     * Register the module class with RequireJS.
+     */
+    define( "home/view/HomeController", dependencies, function () {
 
-		/**
-		 * @description Constructor function for the controller.
-		 * @ngdoc method
-		 * @name app:HomeController#controller
-		 * @methodOf app:HomeController
-		 * @constructor
-		 */
-		var HomeController = function ( $log, $scope, $state ) {
+        /**
+         * @description Constructor function for the controller.
+         * @ngdoc method
+         * @name app:HomeController#controller
+         * @methodOf app:HomeController
+         * @constructor
+         */
+        var HomeController = function ( $log, $scope, $state ) {
 
-			/**
-			 * Reference to the $log.
-			 */
-			$log = $log.getInstance( "HomeController" );
+            /**
+             * Reference to the $log.
+             */
+            $log = $log.getInstance( "HomeController" );
 
-			//-----------------------------------------------------------------------
-			// PROTECTED METHODS
-			//-----------------------------------------------------------------------
+            //-----------------------------------------------------------------------
+            // PROTECTED METHODS
+            //-----------------------------------------------------------------------
 
-			var logout = function () {
-				$log.debug( "logout()" );
+            var logout = function () {
+                $log.debug( "logout()" );
 
-				$state.go("login");
-			};
+                $state.go( "login" );
+            };
 
-			//-----------------------------------------------------------------------
-			// CONFIGURE PRESENTATION MODEL
-			//-----------------------------------------------------------------------
+            //-----------------------------------------------------------------------
+            // CONFIGURE PRESENTATION MODEL
+            //-----------------------------------------------------------------------
 
-			/////////////////////////////////////////////////////////////////////////
-			// VIEW MODEL
-			/////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////
+            // VIEW MODEL
+            /////////////////////////////////////////////////////////////////////////
 
-			$scope.viewModel = {
-			};
+            $scope.viewModel = {};
 
-			/////////////////////////////////////////////////////////////////////////
-			// VIEW METHODS
-			/////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////
+            // VIEW METHODS
+            /////////////////////////////////////////////////////////////////////////
 
-			$scope.logout = logout;
+            $scope.logout = logout;
 
-			/////////////////////////////////////////////////////////////////////////
-			// DATA BINDING
-			/////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////
+            // DATA BINDING
+            /////////////////////////////////////////////////////////////////////////
 
-			//angular.utils.bindSetter( $scope, this, onPlanChg, pptInfoService, "model.activePlan", false );
-		};
+            //angular.utils.bindSetter( $scope, this, onPlanChg, pptInfoService, "model.activePlan", false );
+        };
 
-		/**
-		 * Publish constructor array.
-		 */
-		return [ "$log", "$scope", "$state", HomeController ];
-	} );
+        /**
+         * Publish constructor array.
+         */
+        return [ "$log", "$scope", "$state", HomeController ];
+    } );
 }() );

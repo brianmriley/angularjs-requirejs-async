@@ -23,11 +23,12 @@
         // Infrastructure Modules
         "infrastructure/logger/LogDecorator",
         "infrastructure/LocalizationModule",
-        //"infrastructure/route/RouteModule",
+        "infrastructure/RoutesModule",
         // generated at build time so won't actually be in the source infrastructure dir
         "infrastructure/HTMLTemplateModule",
 
         // Application Modules
+        "login/LoginModule",
         "home/HomeModule"
     ];
 
@@ -40,9 +41,10 @@
         var LogDecorator = require( "infrastructure/logger/LogDecorator" );
         var HTMLTemplateModule = require( "infrastructure/HTMLTemplateModule" );
         var LocalizationModule = require( "infrastructure/LocalizationModule" );
-        //var RouteModule = require( "infrastructure/route/RouteModule" );
+        var RoutesModule = require( "infrastructure/RoutesModule" );
 
         // View Modules
+        var LoginModule = require( "login/LoginModule" );
         var HomeModule = require( "home/HomeModule" );
 
         var moduleName = "ApplicationModule";
@@ -55,7 +57,8 @@
             "angularSpinner",
             HTMLTemplateModule,
             LocalizationModule,
-            //RouteModule,
+            RoutesModule,
+            LoginModule,
             HomeModule
         ];
 

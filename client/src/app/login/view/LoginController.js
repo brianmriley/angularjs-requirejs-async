@@ -11,69 +11,68 @@
  *
  */
 ( function () {
-	"use strict";
+    "use strict";
 
-	var dependencies = [
-	];
+    var dependencies = [];
 
-	/**
-	 * Register the module class with RequireJS.
-	 */
-	define( "login/view/LoginController", dependencies, function () {
+    /**
+     * Register the module class with RequireJS.
+     */
+    define( "login/view/LoginController", dependencies, function () {
 
-		/**
-		 * @description Constructor function for the controller.
-		 * @ngdoc method
-		 * @name app:LoginController#controller
-		 * @methodOf app:LoginController
-		 * @constructor
-		 */
-		var LoginController = function ( $log, $scope, $state ) {
+        /**
+         * @description Constructor function for the controller.
+         * @ngdoc method
+         * @name app:LoginController#controller
+         * @methodOf app:LoginController
+         * @constructor
+         */
+        var LoginController = function ( $log, $scope, $state ) {
 
-			/**
-			 * Reference to the $log.
-			 */
-			$log = $log.getInstance( "LoginController" );
+            /**
+             * Reference to the $log.
+             */
+            $log = $log.getInstance( "LoginController" );
 
-			//-----------------------------------------------------------------------
-			// PROTECTED METHODS
-			//-----------------------------------------------------------------------
+            //-----------------------------------------------------------------------
+            // PROTECTED METHODS
+            //-----------------------------------------------------------------------
 
-			var login = function () {
-				$log.debug( "login()" );
+            var login = function () {
+                $log.debug( "login()" );
 
-				$state.go("home");
-			};
+                $state.go( "home" );
+            };
 
-			//-----------------------------------------------------------------------
-			// CONFIGURE PRESENTATION MODEL
-			//-----------------------------------------------------------------------
+            //-----------------------------------------------------------------------
+            // CONFIGURE PRESENTATION MODEL
+            //-----------------------------------------------------------------------
 
-			/////////////////////////////////////////////////////////////////////////
-			// VIEW MODEL
-			/////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////
+            // VIEW MODEL
+            /////////////////////////////////////////////////////////////////////////
 
-			$scope.viewModel = {
-				username: "",
-				password: ""
-			};
+            $scope.viewModel = {
+                username: "",
+                password: ""
+            };
 
-			/////////////////////////////////////////////////////////////////////////
-			// VIEW METHODS
-			/////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////
+            // VIEW METHODS
+            /////////////////////////////////////////////////////////////////////////
 
-			$scope.login = login;
+            $scope.login = login;
 
-			/////////////////////////////////////////////////////////////////////////
-			// DATA BINDING
-			/////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////
+            // DATA BINDING
+            /////////////////////////////////////////////////////////////////////////
 
-			//angular.utils.bindSetter( $scope, this, onPlanChg, pptInfoService, "model.activePlan", false );
-		};
+            //angular.utils.bindSetter( $scope, this, onPlanChg, pptInfoService, "model.activePlan", false );
+        };
 
-		/**
-		 * Publish constructor array.
-		 */
-		return [ "$log", "$scope", "$state", LoginController ];
-	} );
+        /**
+         * Publish constructor array.
+         */
+        return [ "$log", "$scope", "$state", LoginController ];
+    } );
 }() );

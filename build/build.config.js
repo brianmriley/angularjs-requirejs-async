@@ -94,8 +94,8 @@ module.exports = {
      */
     ports: {
         webServer: {
-            build : 8890,
-            compile: 8890
+            build : 8891,
+            compile: 8891
         },
         karma: {
             unit: {

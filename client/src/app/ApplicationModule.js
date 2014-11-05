@@ -26,10 +26,11 @@
         "infrastructure/RoutesModule",
         // generated at build time so won't actually be in the source infrastructure dir
         "infrastructure/HTMLTemplateModule",
+        "infrastructure/loader/LoaderModule",
 
         // Application Modules
-        "login/LoginModule",
-        "home/HomeModule"
+        "login/LoginModule"
+        //"home/HomeModule"
     ];
 
     /**
@@ -42,24 +43,32 @@
         var HTMLTemplateModule = require( "infrastructure/HTMLTemplateModule" );
         var LocalizationModule = require( "infrastructure/LocalizationModule" );
         var RoutesModule = require( "infrastructure/RoutesModule" );
+        var LoaderModule = require( "infrastructure/loader/LoaderModule" );
 
         // View Modules
         var LoginModule = require( "login/LoginModule" );
-        var HomeModule = require( "home/HomeModule" );
+        //var HomeModule = require( "home/HomeModule" );
 
         var moduleName = "ApplicationModule";
         var moduleDependencies = [
+
+            // 3rd party modules
             "ui.router",
             //"ui.odometer",
             //"ngAnimate",
             "ngSanitize",
             "angularModalService",
             "angularSpinner",
+
+            // infrastructure modules
             HTMLTemplateModule,
             LocalizationModule,
             RoutesModule,
-            LoginModule,
-            HomeModule
+            LoaderModule,
+
+            // view modules
+            LoginModule
+            //HomeModule
         ];
 
         /**

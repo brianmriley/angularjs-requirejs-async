@@ -41,6 +41,7 @@
             var login = function () {
                 $log.debug( "login()" );
 
+                //authenticationService.login("putpart", "1234");
                 $state.go( "home" );
             };
 

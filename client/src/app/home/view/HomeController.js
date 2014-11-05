@@ -27,7 +27,7 @@
          * @methodOf app:HomeController
          * @constructor
          */
-        var HomeController = function ( $log, $scope, $state ) {
+        var HomeController = function ( $log, $scope, authenticationService ) {
 
             /**
              * Reference to the $log.
@@ -41,7 +41,7 @@
             var logout = function () {
                 $log.debug( "logout()" );
 
-                $state.go( "login" );
+                authenticationService.logout();
             };
 
             //-----------------------------------------------------------------------
@@ -70,6 +70,6 @@
         /**
          * Publish constructor array.
          */
-        return [ "$log", "$scope", "$state", HomeController ];
+        return [ "$log", "$scope", "authenticationService", HomeController ];
     } );
 }() );

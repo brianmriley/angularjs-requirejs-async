@@ -15,7 +15,8 @@
     // RequireJS dependencies
     var dependencies = [
         "home/HomeConfig",
-        "home/view/HomeController"
+        "home/view/HomeController",
+        "login/service/AuthenticationService"
     ];
 
     /**
@@ -25,6 +26,7 @@
 
         var HomeConfig = require( "home/HomeConfig" );
         var HomeController = require( "home/view/HomeController" );
+        var AuthenticationService = require( "login/service/AuthenticationService" );
 
         var moduleName = "HomeModule";
         var moduleDependencies = [];
@@ -32,9 +34,13 @@
         /**
          * Instantiate the module with it's child module dependencies and IoC objects.
          */
-        angular.module( moduleName, moduleDependencies )
-            //.config( HomeConfig )
-            .controller( "homeController", HomeController );
+        //angular.module( moduleName, moduleDependencies )
+        //    //.config( HomeConfig )
+        //    .controller( "homeController", HomeController );
+
+        angular.asyncModule
+            .controller("homeController", HomeController )
+            .factory("authenticationService", AuthenticationService );
 
         // Publish the module namespace; used as dependency name within other
         // angular.module( <moduleName>, [ <depNameSpace> ] );

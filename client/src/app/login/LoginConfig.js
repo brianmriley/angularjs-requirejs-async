@@ -1,17 +1,11 @@
 /**
- * @docType module
- * @docType app
- * @name app.login:LoginConfig
- * @author Kile Salmon
- * @date July 31, 2014
- * @copyright 2014 Putnam Inc.
+ * @author Brian Riley
+ * @date November 5, 2014
  * @description
  *
  * This file sets up the configuration function for the Login Page
  * Module. Currently, the only thing the config function is responsible
  * for is adding the modules states to the route provider.
- *
- * @author Kile Salmon
  *
  */
 ( function () {

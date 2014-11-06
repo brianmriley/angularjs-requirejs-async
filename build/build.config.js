@@ -111,8 +111,8 @@ module.exports = {
      */
     proxy: {
         api: {
-            host: "dcportal-md3.putnam.com",
-            context: "/dc-ph2-participant-web",
+            host: "dev.wasi.com",
+            context: "/angular",
             port: 443
         }
     }

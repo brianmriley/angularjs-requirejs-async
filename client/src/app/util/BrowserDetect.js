@@ -1,10 +1,6 @@
 /**
- * @docType function
- * @ngDoc util
- * @name app.utils:BrowserDetect
  * @author Brian Riley
- * @date July 24, 2014
- * @copyright 2014 Putnam Inc.
+ * @date November 5, 2014
  * @description
  *
  *      Used to detect browser versions.

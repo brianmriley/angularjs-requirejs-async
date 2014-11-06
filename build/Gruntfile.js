@@ -583,7 +583,7 @@ module.exports = function ( grunt ) {
             },
             prod: {
                 files: {
-                    "<%= compileDir %>/styles/ppt.min.css": "<%= srcDir %>/styles/putnam.theme.less"
+                    "<%= compileDir %>/styles/ppt.min.css": "<%= srcDir %>/styles/theme.less"
                 }
             }
         },

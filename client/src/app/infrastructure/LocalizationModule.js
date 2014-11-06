@@ -1,10 +1,6 @@
 /**
- * @docType module
- * @ngDoc app
- * @name app.Modules:LocalizationModule
  * @author Brian Riley
- * @date July 24, 2014
- * @copyright 2014 Putnam Inc.
+ * @date November 5, 2014
  * @description
  *
  *      Defines some locales for the application like English and Spanish. The actual JSON localization resource bundles are loaded into the

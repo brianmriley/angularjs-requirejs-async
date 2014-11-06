@@ -1,10 +1,6 @@
 /**
- * @docType function
- * @ngDoc app
- * @name app.login.view:LoginController
  * @author Brian Riley
- * @date July 24, 2014
- * @copyright 2014 Putnam Investments Inc.
+ * @date November 5, 2014
  * @description
  *
  *      The controller for the login view. Provides presentation methods and models to the corresponding view.

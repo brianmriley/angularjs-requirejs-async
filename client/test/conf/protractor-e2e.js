@@ -76,7 +76,7 @@ exports.config = {
 
     // A base URL for your application under test. Calls to browser.get() with relative paths will be prepended with this.
     // NOTE: Currently not using this as set the URL directly in tests in beforeEach()
-//    baseUrl: "https://dcportal-loc.putnam.com:8890",
+//    baseUrl: "https://www.foo.com:8890",
 
     // -----------------------------------------------------------------
     // Jasmine configuration.

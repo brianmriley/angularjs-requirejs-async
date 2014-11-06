@@ -1,7 +1,6 @@
 /**
  * @author Brian Riley
- * @date July 24, 2014
- * @copyright 2014 Putnam Investments Inc.
+ * @date November 5, 2014
  * @description
  *
  *      Bootstraps the application by loading all dependencies, setting up RequireJS, and bootstrapping the

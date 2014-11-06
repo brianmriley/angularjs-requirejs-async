@@ -1,10 +1,6 @@
 /**
- * @docType function
- * @ngDoc app
- * @name app:BalancesController
  * @author Brian Riley
- * @date July 24, 2014
- * @copyright 2014 Putnam Investments Inc.
+ * @date November 5, 2014
  * @description
  *
  *      The authentication service.

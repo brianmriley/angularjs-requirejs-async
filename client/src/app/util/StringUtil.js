@@ -1,10 +1,6 @@
 /**
- * @docType function
- * @ngDoc util
- * @name app.util:StringUtil
  * @author Brian Riley
- * @date July 24, 2014
- * @copyright 2014 Putnam Investments Inc.
+ * @date November 5, 2014
  * @description
  *
  * String supplant global utility (similar to but more powerful than sprintf() ).

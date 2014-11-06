@@ -1,10 +1,6 @@
 /**
- * @docType function
- * @ngDoc util
- * @name app.util.logger:ExternalLogger
  * @author Brian Riley
- * @date July 24, 2014
- * @copyright 2014 Putnam Inc.
+ * @date November 5, 2014
  * @description
  *
  *      ExternalLogger

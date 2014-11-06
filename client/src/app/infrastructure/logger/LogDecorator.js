@@ -1,10 +1,6 @@
 /**
- * @docType function
- * @ngDoc util
- * @name app.util.logger:LogEnhancer
  * @author Brian Riley
- * @date July 24, 2014
- * @copyright 2014 Putnam Inc.
+ * @date November 5, 2014
  * @description
  *
  *      Used within AngularJS to decorate/enhance the AngularJS $log service. The logger provides more robust and common logging features

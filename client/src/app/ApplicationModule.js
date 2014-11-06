@@ -1,10 +1,6 @@
 /**
- * @docType module
- * @docType app
- * @name app.Modules:ApplicationModule
  * @author Brian Riley
- * @date July 24, 2014
- * @copyright 2014 Putnam Inc.
+ * @date November 5, 2014
  * @description
  *
  *      Lists all of the application dependency modules so it's all packaged into one parent module.

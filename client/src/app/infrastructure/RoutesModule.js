@@ -1,10 +1,6 @@
 /**
- * @docType module
- * @docType app
- * @name app.home:RoutesModule
  * @author Brian Riley
- * @date July 24, 2014
- * @copyright 2014 Putnam Inc.
+ * @date November 5, 2014
  * @description
  *
  *      Module definition for Route section.

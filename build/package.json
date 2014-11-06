@@ -1,12 +1,11 @@
 {
-  "author": "Putnam Inc.",
+  "author": "Web App Solution, Inc.",
   "name": "angularjs-requirejs-async",
   "version": "0.1.0",
   "description": "POC t provide asynchronous loading of AngularJS components using RequireJS.",
-  "homepage": "http://www.putnam.com/",
+  "homepage": "http://www.webappsolution.com/",
   "repository": {
-    "type": "SVN",
-    "url": "https://svn-mig.putnaminv.com/svn/dc/participant/TRUNK"
+    "type": "GIT"
   },
   "readmeFilename": "README.md",
   "directories": {

@@ -1,10 +1,6 @@
 /**
- * @docType function
- * @ngDoc util
- * @name app.util:URLUtils
  * @author Brian Riley
- * @date July 24, 2014
- * @copyright 2014 Putnam Inc.
+ * @date November 5, 2014
  * @description
  *
  *      Simple URL query string utility that's framework independent.

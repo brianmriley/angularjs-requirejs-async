@@ -79,10 +79,10 @@
             // we simply add a parameter to the configuration function with the "Provider" suffix after
             // the name of the registered provider (for the registered "personManager" provider instance
             // we must write "personManagerProvider").
-            //.config(function (personManagerProvider)
-            //{
-            //    personManagerProvider.setFullNameSeparator("*");
-            //})
+            .config(function (personManagerProvider)
+            {
+                personManagerProvider.setFullNameSeparator("*");
+            })
 
             // The run phase of the "mainModule" could be useful for any initialization procedure.
             // We get a reference to the "person" object simply specifying it as a parameter in the

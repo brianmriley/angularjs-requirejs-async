@@ -41,6 +41,7 @@
         var moduleDependencies = [];
 
         var injector;
+        var configInjector;
         var providerCache;
 
         var moduleLoader = {
@@ -52,8 +53,10 @@
          * Instantiate the module with it's child module dependencies and IoC objects.
          */
         angular.module( moduleName, moduleDependencies )
-            .config( [ "$controllerProvider", "$provide", "$compileProvider", "$filterProvider", "$animateProvider",
-                function ( $controllerProvider, $provide, $compileProvider, $filterProvider, $animateProvider ) {
+            .config( [ "$controllerProvider", "$provide", "$compileProvider", "$filterProvider", "$animateProvider", "$injector",
+                function ( $controllerProvider, $provide, $compileProvider, $filterProvider, $animateProvider, $injector ) {
+
+                    configInjector = $injector;
 
                     providerCache = {
                         $controllerProvider: $controllerProvider,
@@ -160,8 +163,10 @@
                      * @param fn
                      */
                     config: function(fn) {
-                        console.log(arguments);
-                        injector.invoke(fn || angular.noop);
+                        //injector.invoke(fn || angular.noop);
+                        configInjector.invoke(fn || angular.noop);
+                        //logger.debug( "config()" );
+                        return this;
                     },
 
                     /**
@@ -173,6 +178,7 @@
                      */
                     run: function(fn) {
                         injector.invoke(fn || angular.noop);
+                        return this;
                     },
 
                     providerCache: providerCache,

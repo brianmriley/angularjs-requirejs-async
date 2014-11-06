@@ -1,1 +1,10 @@
+<div>
+	<strong>First name:</strong> {{viewModel.personManager.getPersonFirstName()}}<br />
+	<strong>Last name:</strong> {{viewModel.personManager.getPersonLastName()}}<br />
+	<strong>Full name:</strong> {{viewModel.personManager.getPersonFullName()}}<br />
+	<br />
+	<label>Set the first name: <input type="text" ng-model="viewModel.personfirstName"/></label><br />
+	<label>Set the last name: <input type="text" ng-model="viewModel.personlastName"/></label>
+</div>
+
 <button ng-click="logout()">{{ "home.logout" | translate }}</button>

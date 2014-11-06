@@ -23,7 +23,7 @@
          * @methodOf app:HomeController
          * @constructor
          */
-        var HomeController = function ( $log, $scope, authenticationService ) {
+        var HomeController = function ( $log, $scope, authenticationService, personManager, person ) {
 
             /**
              * Reference to the $log.
@@ -48,7 +48,10 @@
             // VIEW MODEL
             /////////////////////////////////////////////////////////////////////////
 
-            $scope.viewModel = {};
+            $scope.viewModel = {
+                personManager: personManager,
+                person: person
+            };
 
             /////////////////////////////////////////////////////////////////////////
             // VIEW METHODS
@@ -66,6 +69,6 @@
         /**
          * Publish constructor array.
          */
-        return [ "$log", "$scope", "authenticationService", HomeController ];
+        return [ "$log", "$scope", "authenticationService", "personManager", "person", HomeController ];
     } );
 }() );

@@ -3,8 +3,8 @@
  * @date November 5, 2014
  * @description
  *
- *      Used within AngularJS to decorate/enhance the AngularJS $log service. The logger provides more robust and common logging features
- *      expected from enterprise loggers like Log4J. A typical log output might look like:
+ *      Used within AngularJS to decorate/enhance the AngularJS $log service. The logger provides more robust and common
+ *      logging features expected from enterprise loggers like Log4J. A typical log output might look like:
  *
  *      var username = "john.smith";
  *      var password = "p@ssw0rd";
@@ -39,8 +39,8 @@
          * @private
          */
         var LogDecorator = function ( $provide ) {
-            // Register our $log decorator with AngularJS $provider
 
+            // Register our $log decorator with AngularJS $provider
             $provide.decorator( "$log", [ "$delegate",
                 function ( $delegate ) {
                     // NOTE: the LogEnhancer module returns a FUNCTION that we named `enhanceLoggerFn`

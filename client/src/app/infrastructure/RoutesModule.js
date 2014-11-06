@@ -23,40 +23,21 @@
      */
     define( "infrastructure/RoutesModule", dependencies, function () {
 
-        //var RouteConfig = require( "home/RouteConfig" );
         var ExternalLogger = require( "infrastructure/logger/ExternalLogger" );
         var logger = ExternalLogger.getInstance( "RoutesModule" );
-
-        var injector = {};
 
         var moduleName = "RoutesModule";
         var moduleDependencies = [];
 
         var resolve = {
 
-            //load: angular.asyncModule.load
-            load: ["$q", "$rootScope", function ($q, $rootScope) {
-
-                var defer = $q.defer();
+            load: function () {
 
                 // the data property is part of the state object defined below
                 var module = this.data;
 
-                if(angular.isUndefined(module) || (module === null) || (module === "")) {
-                    throw new Error("An async module cannot be undefined, null, or an empty string. Trying to load the " +
-                    "async module with name = " + module);
-                }
-
-                logger.debug( "loadModule( {0} )", [module] );
-
-                //require( [ "home/HomeModule" ], function ( module ) {
-                require( [ module ], function ( module ) {
-                    defer.resolve();
-                    $rootScope.$apply();
-                } );
-
-                return defer.promise;
-            }]
+                return angular.asyncModule().load(module);
+            }
         };
 
         /**
@@ -64,46 +45,35 @@
          */
         angular.module( moduleName, moduleDependencies )
 
-            // TODO: BMR: Do we need this? It was exploratory when first trying to register services after bootstrapping...
-            .config( [ "$injector",
-                    function ( $injector ) {
-                        injector = $injector;
-                    }
-                ] )
-            .config( [ "$stateProvider",
-                function ( $stateProvider ) {
+            .config( [ "$stateProvider", function ( $stateProvider ) {
 
-                    $stateProvider
+                $stateProvider
 
-                        // DEFAULT
-                        .state( "default", {
-                            url: "",
-                            templateUrl: "login/view/LoginView",
-                            controller: "loginController",
-                            pageTitle: "login.title"
-                        } )
+                    // DEFAULT
+                    .state( "default", {
+                        url: "",
+                        templateUrl: "login/view/LoginView",
+                        controller: "loginController",
+                        pageTitle: "login.title"
+                    } )
 
-                        // LOGIN
-                        .state( "login", {
-                            url: "/login",
-                            templateUrl: "login/view/LoginView",
-                            controller: "loginController",
-                            pageTitle: "login.title"
-                        } )
+                    // LOGIN
+                    .state( "login", {
+                        url: "/login",
+                        templateUrl: "login/view/LoginView",
+                        controller: "loginController",
+                        pageTitle: "login.title"
+                    } )
 
-                        // HOME
-                        .state( "home", {
-                            url: "/home",
-                            templateUrl: "home/view/HomeView",
-                            controller: "homeController",
-                            pageTitle: "home.title",
-                            data: "home/HomeModule",
-                            resolve: resolve
-                            //resolve: {
-                            //    load: angular.asyncModule.load
-                            //}
-
-                        } );
+                    // HOME
+                    .state( "home", {
+                        url: "/home",
+                        templateUrl: "home/view/HomeView",
+                        controller: "homeController",
+                        pageTitle: "home.title",
+                        data: "home/HomeModule",
+                        resolve: resolve
+                    } );
 
                 }
             ] );

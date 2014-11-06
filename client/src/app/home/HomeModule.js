@@ -34,11 +34,7 @@
         /**
          * Instantiate the module with it's child module dependencies and IoC objects.
          */
-        //angular.module( moduleName, moduleDependencies )
-        //    //.config( HomeConfig )
-        //    .controller( "homeController", HomeController );
-
-        angular.asyncModule
+        angular.asyncModule( moduleName, moduleDependencies )
             .controller("homeController", HomeController )
             .factory("authenticationService", AuthenticationService );
 

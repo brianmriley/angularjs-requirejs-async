@@ -32,7 +32,7 @@
                 // the data property is part of the state object defined below
                 var module = this.data;
 
-                return angular.asyncModule().load(module);
+                return angular.asyncModule().load( module );
             }
         };
 
@@ -41,38 +41,37 @@
          */
         angular.module( moduleName, moduleDependencies )
 
-            .config( [ "$stateProvider", function ( $stateProvider ) {
+        .config( [ "$stateProvider", function ( $stateProvider ) {
 
-                $stateProvider
+            $stateProvider
 
-                    // DEFAULT
-                    .state( "default", {
-                        url: "",
-                        templateUrl: "login/view/LoginView",
-                        controller: "loginController",
-                        pageTitle: "login.title"
-                    } )
+            // DEFAULT
+                .state( "default", {
+                url: "",
+                templateUrl: "login/view/LoginView",
+                controller: "loginController",
+                pageTitle: "login.title"
+            } )
 
-                    // LOGIN
-                    .state( "login", {
-                        url: "/login",
-                        templateUrl: "login/view/LoginView",
-                        controller: "loginController",
-                        pageTitle: "login.title"
-                    } )
+            // LOGIN
+            .state( "login", {
+                url: "/login",
+                templateUrl: "login/view/LoginView",
+                controller: "loginController",
+                pageTitle: "login.title"
+            } )
 
-                    // HOME
-                    .state( "home", {
-                        url: "/home",
-                        templateUrl: "home/view/HomeView",
-                        controller: "homeController",
-                        pageTitle: "home.title",
-                        data: "home/HomeModule",
-                        resolve: resolve
-                    } );
+            // HOME
+            .state( "home", {
+                url: "/home",
+                templateUrl: "home/view/HomeView",
+                controller: "homeController",
+                pageTitle: "home.title",
+                data: "home/HomeModule",
+                resolve: resolve
+            } );
 
-                }
-            ] );
+        } ] );
 
         // Publish the module namespace; used as dependency name within other
         // angular.module( <moduleName>, [ <depNameSpace> ] );

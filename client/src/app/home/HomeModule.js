@@ -31,8 +31,8 @@
          * Instantiate the module with it's child module dependencies and IoC objects.
          */
         angular.asyncModule( moduleName, moduleDependencies )
-            .controller("homeController", HomeController )
-            .factory("authenticationService", AuthenticationService );
+            .controller( "homeController", HomeController )
+            .factory( "authenticationService", AuthenticationService );
 
         // Publish the module namespace; used as dependency name within other
         // angular.module( <moduleName>, [ <depNameSpace> ] );

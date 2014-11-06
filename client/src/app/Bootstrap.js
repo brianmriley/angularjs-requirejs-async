@@ -20,20 +20,20 @@
     require.config( {
         appDir: "",
         baseUrl: "",
-        paths: {
-            "angular": "libs/angular",
-            "angular-animate": "libs/angular-animate",
-            "angular-mocks": "libs/angular-mocks",
-            "angular-sanitize": "libs/angular-sanitize",
-            "angular-touch": "libs/angular-touch",
-            "angular-translate": "libs/angular-translate",
-            "angular-ui-router": "libs/angular-ui-router",
-            "angular-modal-service": "libs/angular-modal-service",
-            "angular-spinner": "libs/angular-spinner",
-            //"angular-odometer-js": "libs/angular-odometer-js",
-            "angular-cookies": "libs/angular-cookies",
-            "twitter-bootstrap": "libs/js/bootstrap.min"
-        },
+        //paths: {
+        //    "angular": "libs/angular",
+        //    "angular-animate": "libs/angular-animate",
+        //    "angular-mocks": "libs/angular-mocks",
+        //    "angular-sanitize": "libs/angular-sanitize",
+        //    "angular-touch": "libs/angular-touch",
+        //    "angular-translate": "libs/angular-translate",
+        //    "angular-ui-router": "libs/angular-ui-router",
+        //    "angular-modal-service": "libs/angular-modal-service",
+        //    "angular-spinner": "libs/angular-spinner",
+        //    //"angular-odometer-js": "libs/angular-odometer-js",
+        //    "angular-cookies": "libs/angular-cookies",
+        //    "twitter-bootstrap": "libs/js/bootstrap.min"
+        //},
         // disabling timeout for script loading to support slow internet connections
         waitSeconds: 0
     } );

@@ -3,7 +3,7 @@
  * @date November 5, 2014
  * @description
  *
- *      The controller for the home view. Provides presentation methods and models to the corresponding view.
+ *      The controller for the foo view. Provides presentation methods and models to the corresponding view.
  *
  */
 ( function () {
@@ -14,21 +14,21 @@
     /**
      * Register the module class with RequireJS.
      */
-    define( "home/view/HomeController", dependencies, function () {
+    define( "foo/view/FooController", dependencies, function () {
 
         /**
          * @description Constructor function for the controller.
          * @ngdoc method
-         * @name app:HomeController#controller
-         * @methodOf app:HomeController
+         * @name app:FooController#controller
+         * @methodOf app:FooController
          * @constructor
          */
-        var HomeController = function ( $log, $scope, $state, authenticationService, personManager, person ) {
+        var FooController = function ( $log, $scope, $state, authenticationService, personManager, person ) {
 
             /**
              * Reference to the $log.
              */
-            $log = $log.getInstance( "HomeController" );
+            $log = $log.getInstance( "FooController" );
 
             //-----------------------------------------------------------------------
             // PROTECTED METHODS
@@ -40,10 +40,10 @@
                 authenticationService.logout();
             };
 
-            var foo = function () {
-                $log.debug( "foo()" );
+            var home = function () {
+                $log.debug( "home()" );
 
-                $state.go( "foo" );
+                $state.go( "home" );
             };
 
             //-----------------------------------------------------------------------
@@ -64,7 +64,7 @@
             /////////////////////////////////////////////////////////////////////////
 
             $scope.logout = logout;
-            $scope.foo = foo;
+            $scope.home = home;
 
             /////////////////////////////////////////////////////////////////////////
             // DATA BINDING
@@ -76,6 +76,6 @@
         /**
          * Publish constructor array.
          */
-        return [ "$log", "$scope", "$state", "authenticationService", "personManager", "person", HomeController ];
+        return [ "$log", "$scope", "$state", "authenticationService", "personManager", "person", FooController ];
     } );
 }() );

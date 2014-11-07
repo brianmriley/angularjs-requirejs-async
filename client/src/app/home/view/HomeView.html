@@ -1,10 +1,17 @@
+<div><strong>Home</strong><br/>I am loaded asynchronously as an AMD module using RequireJS and added to the AngularJS IoC after it has been bootstrapped.</div>
+
+<br/>
+<br/>
+
+
 <div>
-	<strong>First name:</strong> {{viewModel.personManager.getPersonFirstName()}}<br />
-	<strong>Last name:</strong> {{viewModel.personManager.getPersonLastName()}}<br />
-	<strong>Full name:</strong> {{viewModel.personManager.getPersonFullName()}}<br />
+	<strong>Home First name:</strong> {{viewModel.personManager.getPersonFirstName()}}<br />
+	<strong>Home Last name:</strong> {{viewModel.personManager.getPersonLastName()}}<br />
+	<strong>Home Full name:</strong> {{viewModel.personManager.getPersonFullName()}}<br />
 	<br />
 	<label>Set the first name: <input type="text" ng-model="viewModel.person.firstName"/></label><br />
 	<label>Set the last name: <input type="text" ng-model="viewModel.person.lastName"/></label>
 </div>
 
 <button ng-click="logout()">{{ "home.logout" | translate }}</button>
+<button ng-click="foo()">{{ "home.foo" | translate }}</button>

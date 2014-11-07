@@ -25,8 +25,8 @@
         "infrastructure/loader/LoaderModule",
 
         // Application Modules
-        "login/LoginModule"
-        //"home/HomeModule"
+        "login/LoginModule",
+        "foo/FooModule"
     ];
 
     /**
@@ -43,7 +43,7 @@
 
         // View Modules
         var LoginModule = require( "login/LoginModule" );
-        //var HomeModule = require( "home/HomeModule" );
+        var FooModule = require( "foo/FooModule" );
 
         var moduleName = "ApplicationModule";
         var moduleDependencies = [
@@ -63,8 +63,8 @@
             LoaderModule,
 
             // view modules
-            LoginModule
-            //HomeModule
+            LoginModule,
+            FooModule
         ];
 
         /**

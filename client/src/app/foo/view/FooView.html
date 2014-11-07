@@ -1,0 +1,16 @@
+<div><strong>Foo</strong><br/>I am part of the initialization of AngularJS and added to the IoC during the bootstrap phase.</div>
+
+<br/>
+<br/>
+
+<div>
+	<strong>Foo First name:</strong> {{viewModel.personManager.getPersonFirstName()}}<br />
+	<strong>Foo Last name:</strong> {{viewModel.personManager.getPersonLastName()}}<br />
+	<strong>Foo Full name:</strong> {{viewModel.personManager.getPersonFullName()}}<br />
+	<br />
+	<label>Set the first name: <input type="text" ng-model="viewModel.person.firstName"/></label><br />
+	<label>Set the last name: <input type="text" ng-model="viewModel.person.lastName"/></label>
+</div>
+
+<button ng-click="logout()">{{ "home.logout" | translate }}</button>
+<button ng-click="home()">{{ "home.title" | translate }}</button>

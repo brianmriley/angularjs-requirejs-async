@@ -1,6 +1,7 @@
 {
     "home": {
         "title": "Home",
-        "logout": "Logout"
+        "logout": "Logout",
+        "foo": "Foo"
     }
 }

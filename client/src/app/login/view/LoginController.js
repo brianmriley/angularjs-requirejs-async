@@ -37,7 +37,7 @@
             var login = function () {
                 $log.debug( "login()" );
 
-                //authenticationService.login("putpart", "1234");
+                //authenticationService.login("wasi", "1234");
                 $state.go( "home" );
             };
 
@@ -64,7 +64,7 @@
             // DATA BINDING
             /////////////////////////////////////////////////////////////////////////
 
-            //angular.utils.bindSetter( $scope, this, onPlanChg, pptInfoService, "model.activePlan", false );
+            //angular.utils.bindSetter( $scope, this, onFooChg, fooService, "model.selectedFoo", false );
         };
 
         /**

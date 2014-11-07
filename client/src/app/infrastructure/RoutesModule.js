@@ -69,7 +69,15 @@
                 pageTitle: "home.title",
                 data: "home/HomeModule",
                 resolve: resolve
-            } );
+            } )
+
+                // HOME
+                .state( "foo", {
+                    url: "/foo",
+                    templateUrl: "foo/view/FooView",
+                    controller: "fooController",
+                    pageTitle: "foo.title"
+                } );
 
         } ] );
 

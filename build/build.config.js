@@ -85,8 +85,7 @@ module.exports = {
      * Lists the individual locale directories that contains JSON localization resource bundles.
      */
     locale: [
-        "../client/src/assets/locale/en_US",
-        "../client/src/assets/locale/es_ES/"
+        "../client/src/assets/locale/en_US"
     ],
 
     /**
